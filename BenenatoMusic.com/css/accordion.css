@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+ul.accordion {
+	list-style: none;
+	float: left;
+	padding-left: 250px;
+}
+
+div.accordion-panel ul {
+	list-style: none;
+	float: left;
+	padding-left: 20px;
+	padding-top: 10px;
+	line-height: 20px;
+	font-size: 13px;
+}
+
+button.accordion-control {
+	width: 700px;
+	height: 40px;
+	text-align:left;
+	margin-top: 10px;
+	cursor: pointer;
+	transition: 0.4s;
+	font-weight: bold;
+	font-size: 17px;
+	z-index: 1;
+	overflow:hidden;
+	}
+
+div.accordion-panel {
+	display: none;
+	width: 680px;
+	height: auto;
+	background-color:#504D44;
+	color: #fff;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-top: 10px;
+	float: left;
+	clear: none;
+	position: relative;
+	z-index: 20;
+	cursor:pointer;
+	}
+
+div.accordion-panel.show {
+    display: block;
+}
+	
+button.accordion-control.active, button.accordion-control:hover {
+    background-color: #666;
+	color: #fff;
+}
+
+button.accordion-control:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion-control.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
