@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
 /* Contact Page */
 
 * {
@@ -9,66 +8,52 @@
 }
 
 body {
-	font-family: Arial, Verdana, sans-serif;
-	background-color:#000000;
-	width: 100%;
+    font-family: Arial, Verdana, sans-serif;
+    background-color:#000000;
+    width: 100%;
 }
 
 /* Section */
 
 section {
-	width: 100%;
-	max-width: 1200px;
-	min-height: 650px;
-	margin: 50px auto;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 650px;
+    margin: 50px auto;
 }
 
 div.contactpic > p {
-	padding: 0px 30px 10px 30px;
-	font-size: 20px;
-	font-family: 'Rokkitt', serif;
-	color: #fff;
+    padding: 0 30px 10px 30px;
+    font-size: 20px;
+    font-family: 'Rokkitt', serif;
+    color: #fff;
 }
 
 .contactpic {
-	float: left;
-	width: 40%;
-	margin-top: 20px;
-	margin-left: 50px;
+    float: left;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .contactpic img {
-	width: 80%;
-	padding-top: 30px;
-	padding-left: 40px;
-}
-
-.contactpic img:hover {
-	width: 80%;
-}
-
-.direct {
-	clear: none;
-	float left;
-	padding-top: 40px;
-	font-weight: bold;
+    width: 80%;
+    margin: 30px 40px;
+    box-shadow: 4px 4px 10px #888888;
 }
 
 /* Contact Form */
 
 .dark-matter {
-	margin-top: 30px;
-    margin-left: 0px;
-    margin-right: 50px;
-	width:40%;
+    margin: 30px 50px 0 0;
+    padding: 30px 30px 20px;
+    width:40%;
     background: #555;
-    padding: 30px 30px 20px 30px;
-    font: 12px Arial, Helvetica, sans-serif;
+    font-family: 12px Arial, Helvetica, sans-serif;
     color: #D3D3D3;
-    text-shadow: 1px 1px 1px #444;
     border: none;
     border-radius: 5px;
-	float: right;
+    float: right;
 }
 
 .dark-matter h1 > span {
@@ -78,7 +63,7 @@ div.contactpic > p {
 
 .dark-matter label {
     display: block;
-    margin: 0px 0px 5px;
+    margin: 0 0 5px;
 }
 
 .dark-matter label > span {
@@ -90,7 +75,7 @@ div.contactpic > p {
     font-weight: bold;
 }
 
-.dark-matter input[type="text"], .dark-matter input[type="email"], .dark-matter textarea, .dark-matter select {
+.dark-matter input[type="text"], .dark-matter input[type="email"], .dark-matter textarea {
     border: none;
     color: #525252;
     height: 25px;
@@ -99,28 +84,16 @@ div.contactpic > p {
     margin-right: 6px;
     margin-top: 2px;
     outline: 0 none;
-    padding: 5px 0px 5px 5px;
+    padding: 5px 0 5px 5px;
     width: 70%;
     border-radius: 2px;
     background: #DFDFDF;
 }
 
-.dark-matter select {
-    background: #DFDFDF url('down-arrow.png') no-repeat right;
-    background: #DFDFDF url('down-arrow.png') no-repeat right;
-    appearance:none;
-    text-indent: 0.01px;
-    text-overflow: '';
-    width: 70%;
-    height: 35px;
-    color: #525252;
-    line-height: 25px;
-}
-
-.dark-matter textarea{
-    height:100px;
+.dark-matter textarea {
     padding: 5px 0px 0px 5px;
     width: 70%;
+    height:100px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
 }
@@ -131,10 +104,9 @@ div.contactpic > p {
     padding: 10px 25px 10px 25px;
     color: #fff;
     border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     font-weight: bold;
     box-shadow: 1px 1px 1px #3D3D3D;
+    cursor: pointer;
 }
 
 .dark-matter .button:hover {
@@ -142,98 +114,120 @@ div.contactpic > p {
     background-color: #EBEBEB;
 }
 
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert {
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
 @media screen and (max-width: 960px) {
-.contactpic img {
-	width: 90%;
-	padding-top: 80px;
-}
-
-.contactpic img:hover {
-	width: 90%;
-	padding-top: 80px;
-}
-
 .contactpic {
-	float: left;
-	width: 40%;
-	margin-top: 50px;
-	margin-left: 30px;
-	}
+    float: left;
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.contactpic img {
+    width: 90%;
+    margin-top: 80px;
+  }
 }
 
 @media screen and (max-width: 768px) {
 section {
-	height: 950px;
+    height: 1050px;
 }
 	
 .contactpic {
-	float: none;
-	width: 60%;
+    float: none;
+    width: 60%;
 }
 
 div.contactpic > p {
-	width: 90%;
-	text-align: center;
-	margin-left: 25%;
+    width: 90%;
+    text-align: center;
+    margin-left: 25%;
 }
 
 .contactpic img {
-	width: 90%;
-	padding-top: 30px;
-	margin-left: 100px;
-}
-
-.contactpic img:hover {
-	width: 90%;
-	padding-top: 20px;
+    margin: 5% 30%;
 }
 
 .dark-matter {
-	float: none;
-	width: 60%;
-	margin: 20px 0px 40px 120px;
-	}
+    float: none;
+    width: 60%;
+    margin: 20px 0 40px 120px;
+  }
 }
 	
 @media screen and (max-width: 650px) {
 section {
-	height: 950px;
-	width: 98%
+    height: 950px;
+    width: 98%
 }
 	
 .contactpic {
-	float: none;
-	width: 80%;
-	margin-top: 20px;
-	margin-left: 30px;
+    float: none;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .contactpic img {
-	width: 90%;
-	padding-top: 20px;
-	margin-left: 1%;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 1%;
 }
 
 div.contactpic > p {
-	width: 90%;
-	text-align: center;
-	margin-left: 5%;
-}
-
-.contactpic img:hover {
-	width: 90%;
-	padding-top: 30px;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
 }
 
 .dark-matter {
-	float: none;
-	margin-top: 30px;
-	margin-left: 15%;
+    float: none;
+    margin-top: 30px;
+    margin-left: 15%;
 }
 
 .dark-matter label > span {
     display: block;
     font-size: 10px;
-	}
+  }
 }
-	
+
+@media screen and (max-width: 425px) {
+div.contactpic > p {
+    margin-left: 0;
+}
+
+.contactpic img {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 325px) {
+.dark-matter label > span {
+    text-align: left;
+}
+
+.dark-matter input[type="text"], .dark-matter input[type="email"], .dark-matter textarea {
+    width: 100%;
+  }
+}

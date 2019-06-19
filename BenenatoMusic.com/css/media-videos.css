@@ -18,95 +18,65 @@ body {
 
 section {
 	width: 100%;
-	max-width: 1200px;
-	height:inherit;
+	max-width: 960px;
+	min-height: 850px;
 	margin: 50px auto;
 }
 
-section.videos {
-	width: 100%;
-	float: right;
-	clear: none;
-	display:block;
-	margin: 10px;
-	margin-left: 30px;
+.zoom-effect-container {
+    float: left;
+    position: relative;
+    width: 480px;
+	height: 320px;
+ 	overflow: hidden;
 }
 
-section img {
-	width: "37%.4";
-	margin: 20px;
-	margin-left: 80px;
-	padding-right:10px;
+.item {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+}
+
+.zoomcard {
+	overflow: hidden;
+	display: block;
+	border-radius: 5px;
+}
+
+.item img {
+  	-webkit-transition: 0.6s ease;
+  	transition: 0.6s ease;
+}
+
+.zoom-effect-container:hover .item img {
+  	-webkit-transform: scale(1.1);
+  	transform: scale(1.1);
 }
 
 @media screen and (max-width: 960px) {
-
-video {
-	margin: 20px;
-	margin-left: 0px;
-	padding-right:10px;
+.zoom-effect-container {
 	width: 100%;
 }
 
-section img {
-	width: 50%;
-	margin: 20px;
-	margin-left: 250px;
-	padding-right:10px;
-	}
+.item {
+	position: relative;
+	display: flex;
+	justify-content: center;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
+section {
+	width: 90%;
+}
 
-video {
-	margin: 20px;
-	margin-left: 0px;
-	padding-right:10px;
+.item img {
 	width: 100%;
+  }
 }
 
-section img {
-	width: 60%;
-	margin: 20px;
-	margin-left: 22%;
-	padding-right:10px;
-	}
-}
-
-@media screen and (max-width: 600px) {
-
-video {
-	margin: 20px;
-	margin-left: 0px;
-	padding-right:10px;
-	width: 100%;
-}
-
-section img {
-	width: 60%;
-	margin: 20px;
-	margin-left: 20%;
-	padding-right:10px;
-	}
-}
-
-@media screen and (max-width: 500px) {
-
-video {
-	margin: 20px;
-	margin-left: 0px;
-	padding-right:10px;
-	width: 100%;
-}
-
-section img {
-	width: 60%;
-	margin: 20px;
-	margin-left: 20%;
-	padding-right:10px;
-	}
-}
-	
-	
-	
-
+@media screen and (max-width: 375px) {
+.zoom-effect-container {
+	height: 250px;
+  }
+}	
