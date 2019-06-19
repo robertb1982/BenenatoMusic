@@ -15,7 +15,7 @@ html, body {
     overflow-x: hidden;
 }
 
-.clearBoth{
+.clearBoth {
 	clear: both;
 }
 
@@ -117,6 +117,24 @@ header a.logo span {
 .slide2 {
 	background-image: url(../images/benenatomusic-heroimage1a.png);
 	height: 400px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 .slide-content {
@@ -302,6 +320,7 @@ article {
 	width:100%;
 	min-height: 230px;
 	border-radius: 20px;
+	box-shadow: 2px 2px #000000;
 }
 	
 article h1 {
@@ -406,13 +425,19 @@ a {
 }
 
 .btn-default {
-    font: 400 13px/18px Arial, sans-serif;
-    color: #ffffff;
-    background: #000000;
+    font: 600 18px Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-transform: uppercase;
     display: inline-block;
+}
+
+.btn-default:hover {
+	background: rgba(0,0,0,0);
+	color: #ffffff;
+	box-shadow: inset 0 0 0 3px #ffffff;
 }
 
 /* Footer */
@@ -425,7 +450,6 @@ footer {
 	height: 100px;
 	position: absolute;
 }
-
 
 footer p.notice {
 	text-align:center;
@@ -450,7 +474,7 @@ footer ul li {
 	display:inline;
 }
 
-footer ul li a{
+footer ul li a {
 	height:45px;
 	width:46px;
 	padding:0;
@@ -458,7 +482,7 @@ footer ul li a{
 	display:inline-block;
 	position: relative;
 	text-indent:-9999px;
-	}
+}
 	
 footer ul a.linkedin{
 	background:url(../images/social-media-icons.png) -8px 0px;
@@ -559,7 +583,6 @@ header {
 
 header a.logo {
 	left: 33%;
-
 }
 
 nav { 
@@ -600,7 +623,7 @@ aside {
 
 .grid_6 h2 {
 	padding-top: 50px;
-	}
+}
 
 .slide2 {
 	background-image: url(../images/benenatomusic-heroimage1-tablet.png);
@@ -767,8 +790,7 @@ aside {
 
 aside h1{
 	text-align: center;
-}
-
+	}
 }
 
 @media screen and (max-width: 425px) {
@@ -788,7 +810,6 @@ nav a.mobile_menu {
 	top: 15px;
 	margin-left: 0px;
 	display: block;
-}
-	
+	}
 }
 	
