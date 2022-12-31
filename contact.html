@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,7 +13,9 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-        <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+        <!-- <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="javascript/design.js"></script>
         <meta name="description" content="Contact me if you are interested in booking a show, starting a music project, or to discuss anything music related." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +32,12 @@
 		<meta name="twitter:title" content="Benenato Music"/>
 		<meta name="twitter:description" content="Check out BenenatoMusic.com learn about Rob Benenato's music background, latest projects and more."/>
 		<meta name="twitter:image" content="http://www.benenatomusic.com/images/bobsolo-facebook-meta.jpg"/>
-
+<style>
+    .invalid-feedback {
+        padding: 0 22% 2%;
+        color: #ffffff;
+    }
+</style>
 </head>
 
 <body>
@@ -38,7 +47,7 @@
       <div class="container">
           <div class="row">
              <div class="grid_12">
-          <h1><a class="logo" title="Benenato Music" href="https://robertb1982.github.io/BenenatoMusic/index.html"><span>Benenato Music</span></a></h1>
+          <h1><a class="logo" title="Benenato Music" href="http://www.benenatomusic.com"><span>Benenato Music</span></a></h1>
 
 <nav>
 <a class="mobile_menu" title="menu" href="#"></a>
@@ -59,7 +68,7 @@
     </ul>
     </li>
   <li><a href="resources.html" aria-haspopup="true">RESOURCES</a></li>
-  <li><a href="contact.html" aria-haspopup="true">CONTACT</a></li>
+  <li><a href="contact.php" aria-haspopup="true">CONTACT</a></li>
 </ul>                  
 
 </nav>
@@ -82,30 +91,76 @@
 <img src="images/instruments-bw.jpg" alt="Instruments" />
 </div>
 
-<form action="MAILTO:robertb1982@yahoo.com" method="post" enctype="text/plain" class="dark-matter">
-    <label>
-        <span>Your Name :</span>
-        <input id="name" type="text" name="name" placeholder="Your Full Name" />
+<form id="main" method="post" action="contact.php" class="dark-matter" novalidate>
+    <label for="name">
+        <span>Name</span>
+        <input id="name" name="name" class="form-control" type="text" placeholder="Enter your name" required>
+        <p class="invalid-feedback">
+          You need to enter your name.
+        </p>
+    
+    <label for="email">
+        <span>Email</span>
+       <input id="email" name="email" class="form-control" type="email" placeholder="your@email.com" required>
+        <p class="invalid-feedback">
+          You need to enter your email.
+        </p>
     </label>
     
-    <label>
-        <span>Your Email :</span>
-        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    <label for="message">
+        <span>Message</span>
+        <textarea id="message" name="message" class="form-control" required></textarea>
+        <p class="invalid-feedback">
+          You need to enter a message.
+        </p>
     </label>
     
-    <label>
-        <span>Message :</span>
-        <textarea id="message" name="message" placeholder="Your Message"></textarea>
-    </label> 
+    <label for="secCheck">
+        <span>21+49</span>
+       <input id="secCheck" name="secCheck" class="form-control" type="text" required>
+        <p class="invalid-feedback">
+          Answer the security question above.
+        </p>
+    </label>
+    
      <label>
         <span>&nbsp;</span> 
-        <input type="submit" class="button" value="SUBMIT" /> 
-    </label>    
+        <input type="submit" value="Send" id="submit" name="submit" class="button" /> 
+    </label>
+    
+    <label>
+            </label>
 </form>
 
 </section>
 
-<div class="clearBoth"></div>
+<script>
+
+$('.invalid-feedback').hide();
+$('#main').on('submit', function(e) {
+  $('.form-control').each(function() {
+    if ($(this).is(':invalid')) {
+      e.preventDefault();
+      $(this).next('.invalid-feedback').show();
+    } else {
+      $(this).next('.invalid-feedback').hide();
+    }
+  });
+});
+
+$("#name").on("change paste keyup", function() {
+  if($(this).val()){
+ $(this).next('.invalid-feedback').hide();
+} 
+});
+
+$("textarea").on("change paste keyup", function() {
+  if($(this).val()){
+ $(this).parent().find(".invalid-feedback").hide();
+} 
+});
+
+</script>
 
 <footer>
 
@@ -116,7 +171,7 @@
   <li><a href="http://www.youtube.com" target="_blank" class="youtube">YouTube</a></li>
 </ul>
     
-<p class="notice">&copy; 2016-2018 Benenato Music - All Rights Reserved</p>
+<p class="notice">&copy; 2016-2019 Benenato Music - All Rights Reserved</p>
 
 </footer>
 
