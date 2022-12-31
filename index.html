@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Benenato Music</title>
+<link href="css/index.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+        <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="javascript/design.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Check out BenenatoMusic.com to learn about Rob's music background, latest projects and more." />
+        <meta name="robots" content="index,folow" />
+        
+        <meta property="og:title" content="Benenato Music" />
+        <meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.benenatomusic.com" />
+		<meta property="og:image" content="http://www.benenatomusic.com/images/bobsolo-facebook-meta.jpg" />
+		<meta property="og:description" content="Check out BenenatoMusic.com to learn about Rob Benenato's music background, latest projects and more." />
+        
+        <meta name="twitter:card" value="summary"/>
+		<meta name="twitter:site" value="@BenenatoMusic"/>
+		<meta name="twitter:url" content="http://www.benenatomusic.com"/>
+		<meta name="twitter:title" content="Benenato Music"/>
+		<meta name="twitter:description" content="Check out BenenatoMusic.com learn about Rob Benenato's music background, latest projects and more."/>
+		<meta name="twitter:image" content="http://www.benenatomusic.com/images/bobsolo-facebook-meta.jpg"/>
+
+<!-- This website was built, designed, developed, launched by Robert Benenato. Copyright 2016-2022 -->
+
+</head>
+
+<body>
+
+<header>		
+	<div id="stuck_container">
+    	<div class="container">
+      		<div class="row">
+       			 <div class="grid_12">
+					<h1><a class="logo" title="Benenato Music" href="http://www.benenatomusic.com"><span>Benenato Music</span></a></h1>
+
+<nav>
+<a class="mobile_menu" title="menu" href="#"></a>
+
+<ul>
+	<li><a href="#" aria-haspopup="true">ABOUT</a>
+		<ul>
+			<li><a href="about-biography.html">BIOGRAPHY</a></li>
+			<li><a href="about-bandhistory.html">BAND HISTORY</a></li>
+		</ul>
+	</li>
+	<li><a href="newmusicprojects.html" aria-haspopup="true">PROJECTS</a></li>
+	<li><a href="#" aria-haspopup="true">MEDIA</a>
+		<ul>
+			<li><a href="media-audio.html">AUDIO</a></li>
+			<li><a href="media-videos.html">VIDEOS</a></li>
+			<li><a href="media-imagegallery.html">IMAGE GALLERY</a></li>
+		</ul>
+    </li>
+	<li><a href="resources.html" aria-haspopup="true">RESOURCES</a></li>
+	<li><a href="contact.php" aria-haspopup="true">CONTACT</a></li>
+</ul>                  
+
+</nav>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</header>
+
+<div class="wrap">
+		<div id="slider">
+			<div class="slide slide1 fade">
+				<div class="slide-content">
+					<span></span>
+				</div>
+			</div>
+			<div class="slide slide2 fade">
+				<div class="slide-content">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	<div id="arrow-left" class="arrow">&#8249;</div>
+	<div id="arrow-right" class="arrow">&#8250;</div>
+</div>
+
+<script>
+
+let sliderImages = document.querySelectorAll('.slide'), 
+arrowLeft = document.querySelector('#arrow-left'), 
+arrowRight = document.querySelector('#arrow-right'), 
+current = 0;
+
+
+// clear all images
+function reset(){
+	for(let i = 0; i < sliderImages.length; i++){
+		sliderImages[i].style.display = 'none';
+	}
+}
+
+//Initialize slider
+function startSlide(){
+	reset();
+	sliderImages[0].style.display = 'block';
+}
+
+// Show previous
+function slideLeft(){
+	reset();
+	sliderImages[current - 1].style.display = 'block';
+	current--;
+}
+
+//Show next
+function slideRight(){
+	reset();
+	sliderImages[current + 1].style.display = 'block';
+	current++;
+
+}
+
+//Left arrow click
+arrowLeft.addEventListener('click', function(){
+if (current === 0){
+	current = sliderImages.length;
+	}
+	slideLeft();
+});
+
+//Right arrow click
+arrowRight.addEventListener('click', function(){
+if (current === sliderImages.length - 1){
+	current = -1
+	}
+	slideRight();
+});
+
+startSlide();
+
+</script>
+
+<section>
+	<article>
+
+<h1>WELCOME!</h1>
+<p>Thanks for visiting! Being a musician for over 20 years and having a growing interest in web design, it makes sense that the first web site I have decided to build would focus on my music background. One element in my life that has always remained consistent has been my love for playing music. Check out some music in the Media section, and if your a musician stopping by I've added some great web sites under Resources you may find helpful. If your interested in starting or joining a cover band, visit my Projects web page to learn more about the cover band I am putting together! </p>
+
+	</article>
+</section>
+
+<aside>
+	<div class="news-container">
+		<div class="row">
+			<div class="aside_12">
+				<div class="wrapper-for-divider">
+					<div class="grid_6">
+                	<div class="heading1">
+                  <h2>Drummer Wanted For Cover Band</h2>
+                	</div>
+                <div class="box2">
+                  <img src="images/drummer-wanted-cover-band.jpeg" alt="Drummer Wanted">
+                  <p>My new cover band project, Duble Dry Hop, is searching for a responsible and experienced Drummer to join their lineup. No drugs, No drama, No egos! ! It is essential that the Drummer is able to learn songs quickly, and is open-minded to playing all styles of music. The ability to sing lead and/or backup vocals is plus, but not a requirement.</p>
+                  <a class="btn-default" href="newmusicprojects.html">Learn More</a>
+                </div>
+            		</div>
+     			<div class="grid_1">
+                	<div class="divider1"></div>
+                </div>
+            <div class="grid_6">
+                <div class="heading1">
+                  <h2>Double Dry Hop YouTube Channel</h2>
+                </div>
+                <div class="box2">
+                  <img src="images/YouTube-2017.png" alt="Double Dry Hop on YouTube">
+                   <p>My New cover band project, Double Dry Hop, has an official YouTube page! Please check out our YouTube page and listen to some cover songs we recorded in 2017 for promotional purposes. Cover song recordings include I Ran by Flock of Seagulls, Sex Type Thing by Stome Temple Pilots, Just What I Needed by The Cars, and more.</p>
+                  <a class="btn-default" href="https://www.youtube.com/channel/UCBGOrv7SFl0SSQNFVVY7IFw/videos" target="_blank">Learn More</a>
+                </div>
+            	</div>
+       			</div> <!-- Wrapper for Divider -->
+        	</div> <!-- Grid_12 -->
+        </div> <!-- Row -->
+    </div> <!-- News-Container -->
+</aside>
+
+<div class="clearBoth"></div>
+
+<footer>
+
+<ul>
+	<li><a href="http://www.linkedin.com/in/rbenenato" target="_blank" class="linkedin">LinkedIn</a></li>
+	<li><a href="http://www.twitter.com" target="_blank" class="twitter">Twitter</a></li>
+	<li><a href="http://www.facebook.com" target="_blank" class="facebook">Facebook</a></li>
+	<li><a href="http://www.youtube.com" target="_blank" class="youtube">YouTube</a></li>
+</ul>
+    
+<p class="notice">&copy; 2016-2019 Benenato Music - All Rights Reserved</p>
+
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80334583-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
