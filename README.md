@@ -1,2 +1,2 @@
 # BenenatoMusic
-Files and Assets from my music website. Built from scratch using HTML, CSS, JavaScript, jQuery.
+First website I designed and developed from scratch using HTML, CSS, JavaScript, jQuery.
