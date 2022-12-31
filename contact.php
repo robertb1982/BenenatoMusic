@@ -1,0 +1,242 @@
+<?php
+session_start();
+if(!$_SESSION["a"]){
+	$a = rand(1,50);
+	$b = rand(1,50);
+	
+	$_SESSION["a"] = $a;
+	$_SESSION["b"] = $b;
+}
+
+$email = '';
+$message = '';
+$name ='';
+$result = '';
+$error = '';
+
+if(isset($_POST['submit'])){
+   //echo'<h1>Submit Clicked!!!'.$_POST['submit'].'</h1>';
+    $name = $_POST['name'];
+	$email = $_POST['email'];
+	$message = $_POST['message'];
+	$check = intval($_POST['secCheck']);
+	
+	if(!$_POST['name']){$error .='Please enter your name! <br>';}
+	if(!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){ $error .= 'Please enter your email! <br>'; }
+	if(!$_POST['message']){$error .='Please enter a message! <br>';}
+	if($check !==($_SESSION["a"]+$_SESSION["b"])){$error .='Wrong AntiSpam value <br>';}
+
+if($error == ''){
+    $from = 'webmaster@benenatomusic.com';
+    $to =   'robertb1982@yahoo.com'; // email that you want to receive the email to. YOUR ADDRESS
+    $subject = 'Message from BenenatoMusic.com Contact Form';
+    $body = "<p><b>From:</b> $name</p> <p><b>Email:</b> $email</p> \n <p><b>Message:</b> \n $message</p>";
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= 'From: <'.$from.'>' . "\r\n";  
+    if(mail($to,$subject,$body,$headers)){
+     $result = '<div class="alert alert-success">Your mail has been sent!</div>';  
+        }else{
+     $result = '<div class="alert alert-success">Something went wrong. Please try again!</div>';    
+        }
+    $email = '';
+    $message = '';
+    $name ='';
+    
+    // Send email
+} else {
+    $result = '<div class="alert alert-danger">Error Found:<br>'.$error.'</div>';
+}
+  }
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Contact | Benenato Music</title>
+<link href="css/index.css" type="text/css" rel="stylesheet"/>
+<link href="css/contact.css" type="text/css" rel="stylesheet"/>
+<link href="css/subpage-headerbanner.css" type="text/css" rel="stylesheet" />
+<link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="javascript/design.js"></script>
+        <meta name="description" content="Contact me if you are interested in booking a show, starting a music project, or to discuss anything music related." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <meta property="og:title" content="Benenato Music" />
+        <meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.benenatomusic.com/contact.html" />
+		<meta property="og:image" content="http://www.benenatomusic.com/images/bobsolo-facebook-meta.jpg" />
+		<meta property="og:description" content="Check out BenenatoMusic.com learn about Rob Benenato's music background, latest projects and more." />
+        
+        <meta name="twitter:card" value="summary"/>
+		<meta name="twitter:site" value="@BenenatoMusic"/>
+		<meta name="twitter:url" content="http://www.benenatomusic.com/contact.html"/>
+		<meta name="twitter:title" content="Benenato Music"/>
+		<meta name="twitter:description" content="Check out BenenatoMusic.com learn about Rob Benenato's music background, latest projects and more."/>
+		<meta name="twitter:image" content="http://www.benenatomusic.com/images/bobsolo-facebook-meta.jpg"/>
+<style>
+    .invalid-feedback {
+        padding: 0 22% 2%;
+        color: #ffffff;
+    }
+</style>
+</head>
+
+<body>
+
+<header>    
+  <div id="stuck_container">
+      <div class="container">
+          <div class="row">
+             <div class="grid_12">
+          <h1><a class="logo" title="Benenato Music" href="http://www.benenatomusic.com"><span>Benenato Music</span></a></h1>
+
+<nav>
+<a class="mobile_menu" title="menu" href="#"></a>
+
+<ul>
+  <li><a href="#" aria-haspopup="true">ABOUT</a>
+    <ul>
+      <li><a href="about-biography.html">BIOGRAPHY</a></li>
+      <li><a href="about-bandhistory.html">BAND HISTORY</a></li>
+    </ul>
+  </li>
+  <li><a href="newmusicprojects.html" aria-haspopup="true">PROJECTS</a></li>
+  <li><a href="#" aria-haspopup="true">MEDIA</a>
+    <ul>
+      <li><a href="media-audio.html">AUDIO</a></li>
+      <li><a href="media-videos.html">VIDEOS</a></li>
+      <li><a href="media-imagegallery.html">IMAGE GALLERY</a></li>
+    </ul>
+    </li>
+  <li><a href="resources.html" aria-haspopup="true">RESOURCES</a></li>
+  <li><a href="contact.php" aria-haspopup="true">CONTACT</a></li>
+</ul>                  
+
+</nav>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<div id="header">
+  <h1>CONTACT</h1>
+</div>
+
+<section>
+
+<div class="contactpic">
+<p>For business inquiries, booking information, or if you're interested in joining my latest cover band project, please contact me here by filling out the form and we will be in touch soon.</p>
+<img src="images/instruments-bw.jpg" alt="Instruments" />
+</div>
+
+<form id="main" method="post" action="contact.php" class="dark-matter" novalidate>
+    <label for="name">
+        <span>Name</span>
+        <input id="name" name="name" class="form-control" type="text" placeholder="Enter your name" required>
+        <p class="invalid-feedback">
+          You need to enter your name.
+        </p>
+    
+    <label for="email">
+        <span>Email</span>
+       <input id="email" name="email" class="form-control" type="email" placeholder="your@email.com" required>
+        <p class="invalid-feedback">
+          You need to enter your email.
+        </p>
+    </label>
+    
+    <label for="message">
+        <span>Message</span>
+        <textarea id="message" name="message" class="form-control" required></textarea>
+        <p class="invalid-feedback">
+          You need to enter a message.
+        </p>
+    </label>
+    
+    <label for="secCheck">
+        <span><?php echo $_SESSION["a"] .'+'.$_SESSION["b"];?></span>
+       <input id="secCheck" name="secCheck" class="form-control" type="text" required>
+        <p class="invalid-feedback">
+          Answer the security question above.
+        </p>
+    </label>
+    
+     <label>
+        <span>&nbsp;</span> 
+        <input type="submit" value="Send" id="submit" name="submit" class="button" /> 
+    </label>
+    
+    <label>
+        <?php echo $result; ?>
+    </label>
+</form>
+
+</section>
+
+<script>
+
+$('.invalid-feedback').hide();
+$('#main').on('submit', function(e) {
+  $('.form-control').each(function() {
+    if ($(this).is(':invalid')) {
+      e.preventDefault();
+      $(this).next('.invalid-feedback').show();
+    } else {
+      $(this).next('.invalid-feedback').hide();
+    }
+  });
+});
+
+$("#name").on("change paste keyup", function() {
+  if($(this).val()){
+ $(this).next('.invalid-feedback').hide();
+} 
+});
+
+$("textarea").on("change paste keyup", function() {
+  if($(this).val()){
+ $(this).parent().find(".invalid-feedback").hide();
+} 
+});
+
+</script>
+
+<footer>
+
+<ul>
+  <li><a href="http://www.linkedin.com/in/rbenenato" target="_blank" class="linkedin">LinkedIn</a></li>
+  <li><a href="http://www.twitter.com" target="_blank" class="twitter">Twitter</a></li>
+  <li><a href="http://www.facebook.com" target="_blank" class="facebook">Facebook</a></li>
+  <li><a href="http://www.youtube.com" target="_blank" class="youtube">YouTube</a></li>
+</ul>
+    
+<p class="notice">&copy; 2016-2019 Benenato Music - All Rights Reserved</p>
+
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80334583-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
