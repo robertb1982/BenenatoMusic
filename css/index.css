@@ -117,6 +117,7 @@ header a.logo span {
 .slide2 {
 	background-image: url(../images/benenatomusic-heroimage1a.png);
 	height: 400px;
+	background-position: top;
 }
 
 /* Fading animation */
