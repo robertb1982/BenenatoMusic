@@ -1,0 +1,815 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background-color:#000000;
+	background-image:url(../images/grunge_surface_dark_background.jpg);
+	background-attachment:fixed;
+    font-size: 100%;
+    font: inherit;
+    overflow-x: hidden;
+}
+
+.clearBoth {
+	clear: both;
+}
+
+/* Header */
+
+header {
+	width: 100%;
+	background: #000000;
+    padding: 0px;
+    z-index: 99;
+    display: block;
+}
+
+.row {
+  margin-left: -30px;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.row:after {
+  clear: both;
+}
+
+[class*="grid_"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+}
+
+.grid_12 {
+  width: 1170px;
+}
+
+.container {
+  margin-right: 3%;
+  margin-left: auto;
+  width: 1170px;
+  box-sizing: border-box;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.container:after {
+  clear: both;
+}
+
+header a.logo {
+	z-index: 4;
+	position: absolute;
+	display: block;
+	width: 300px;
+	height: 100px;
+	background: url(../images/benenato-music-logo-only.png) no-repeat 0 0;
+	background-size: contain;
+	top: 10px;
+	left: 60px;
+}
+
+header a.logo span {
+	display: none;
+}
+
+/* Hero Slider */
+
+#slider, .wrap, .slide-content {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.wrap {
+	position: relative;
+}
+
+.slide {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.slide1 {
+	background-image: url(../images/benenatomusic-heroimage2.png);
+	height: 400px;
+}
+
+.slide2 {
+	background-image: url(../images/benenatomusic-heroimage1a.png);
+	height: 400px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.slide-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.slide-content span {
+	font-size: 5rem;
+	color: #ffffff;
+}
+
+.arrow {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	height: 0;
+}
+
+#arrow-left {
+	color: #ffffff;
+	margin-left: 30px;
+	left: 0;
+	font-size: 70px;
+}
+
+#arrow-right {
+	color: #ffffff;
+	margin-right: 30px;
+	right: 0;
+	font-size: 70px;
+}
+
+/*Header Styles*/
+
+header h1 {
+	font-size: 3.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 100px;
+	margin-right: .5em;
+	float: left;
+	padding-left: 110px;
+	color: #fff;
+	line-height: 165px;
+}
+
+header h2 {
+	font-style: italic;
+	font-weight:normal;
+	font-size: 1.4em;
+	color: #fff;
+	float: left;
+	text-transform: lowercase;
+	letter-spacing:.1em;
+	line-height: 165px;
+}
+
+header a, header a:hover {
+	color: #fff;
+	border: none;
+}		
+
+/*Nav CSS Styles*/
+
+nav { 
+	background-color: rgba(0,0,0,.9);
+	position: relative; 
+	padding: 6% 20px 0px 45%;
+    float: right;
+    display: block;
+    z-index: 3;
+}
+
+nav::after {
+	content:'';
+	display: block;
+	clear: both;
+}
+
+nav a.mobile_menu {
+	width: 32px;
+	height: 32px;
+	background: url(../images/mobile_menu.png) no-repeat 0 0;
+	background-size: contain;
+	position: absolute;
+	top: 22px;
+	left: 50%;
+	margin-left: -16px;
+	display: none;
+}
+
+/* Nav Menu Rules */
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-family: 'Rokkitt', serif;
+	font-weight:bold;
+	font-size:17px;
+}
+
+nav > ul > li {
+	float: left;
+}
+
+nav ul::after {
+	content:'';
+	display: block;
+	clear: both;
+}
+
+nav ul li:hover {
+	background-color: rgba(145,1,2,.8);
+}
+
+nav ul li:hover > ul {
+	display: block;
+}
+
+nav ul li a {
+	display: inline-block;
+	color: #fff;
+	padding: 10px 20px;
+	text-decoration: none;
+	width: 130px;
+}
+
+nav ul li a:hover {
+	background-color: #A40401;
+}
+
+nav ul ul {	
+    display: none;
+	position: absolute;
+	top: 100%;
+	background-color: rgba(145,1,2,.8);
+}
+
+nav ul ul li {
+	position: relative;
+}
+
+nav ul ul ul {
+	left: 100%;
+	top: 0;
+}
+
+/* Top Level Nav */
+
+nav > ul {
+	padding-left: 15px;
+}
+
+nav > ul > li {
+	float: left;
+}
+
+nav > ul > li> a {
+	padding: 10px 20px 15px 20px;
+	width: auto;
+}
+
+/* Section */
+
+section {
+	width:100%;
+	max-width: 1200px;
+	height: 250px;
+	margin: 10px auto;
+}
+	
+article {
+	background-color: #131313;
+	background-repeat: no-repeat;
+	margin-left: 0px;
+	margin-top: 25px;
+	width:100%;
+	min-height: 230px;
+	border-radius: 20px;
+	box-shadow: 2px 2px #000000;
+}
+	
+article h1 {
+	padding-top: 25px;
+	font-size: 46px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	text-shadow: 2px 2px #000;
+	text-align: center;
+}
+
+article p {
+	padding: 25px 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	text-align: center;
+}
+
+/* Aside */
+
+aside {
+	width:100%;
+	max-width: 1200px;
+	height: 500px;
+	margin: 20px auto;
+}
+
+.news-container {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 40px;
+	width:100%;
+	min-height: 330px;
+}
+
+.row {
+    margin-left: -20px;
+}
+
+[class*="aside_"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+}
+
+.aside_12 {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.grid_6 {
+    width: 45%;
+    text-align: center;
+}
+
+.wrapper-for-divider {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.divider1 {
+    position: absolute;
+    width: 2px;
+    margin-left: -10px;
+    margin-top: 0px;
+    height: 100%;
+    background: #383838;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+}
+
+.grid_6 h2 {
+    font: 400 28px/28px "Oleo Script", sans-serif;
+    color: #ffffff;
+    padding: 25px 0px;
+}
+
+.box2 h3 {
+    font: 400 13px/18px "Asap", sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.box2 p {
+    font: 400 13px/18px Arial, sans-serif;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.box2 .btn-default {
+    margin-top: 20px;
+}
+
+.btn-default {
+    font: 600 18px Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    text-align: center;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-default:hover {
+	background: rgba(0,0,0,0);
+	color: #ffffff;
+	box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+/* Footer */
+
+footer {
+	background: #000000;
+	padding-top: 2px;
+	margin-bottom: 0px;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+}
+
+footer p.notice {
+	text-align:center;
+	font-size:12px;
+	position: relative;
+	color: #ffffff;
+	bottom: -20px;
+	font-family: Arial, sans-serif;
+}
+
+/*-----Sprites-------*/
+
+footer ul {
+	list-style: none;
+	text-align:center;
+	bottom: -10px;
+	position: relative;
+	left: 0px;
+}
+
+footer ul li {
+	display:inline;
+}
+
+footer ul li a {
+	height:45px;
+	width:46px;
+	padding:0;
+	background:none;
+	display:inline-block;
+	position: relative;
+	text-indent:-9999px;
+}
+	
+footer ul a.linkedin{
+	background:url(../images/social-media-icons.png) -8px 0px;
+	}	
+
+footer ul a.twitter{
+	background:url(../images/social-media-icons.png) -50px 0;
+	}	
+	
+footer ul a.facebook{
+	background:url(../images/social-media-icons.png) -90px 0;
+	}	
+	
+footer ul a.youtube{
+	background:url(../images/social-media-icons.png) -135px 0;
+	}	
+	
+	
+	/*-----Sprite Hover -----*/
+	
+footer ul a.linkedin:hover{
+	background:url(../images/social-media-icons-hover.png) -8px 0;
+	}	
+
+footer ul a.twitter:hover{
+	background:url(../images/social-media-icons-hover.png) -50px 0;
+	}	
+	
+footer ul a.facebook:hover{
+	background:url(../images/social-media-icons-hover.png) -90px 0;
+	}	
+	
+footer ul a.youtube:hover{
+	background:url(../images/social-media-icons-hover.png) -135px 0;
+	}	
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+
+nav { 
+	float: left;
+	padding: 70px 0px 0px 400px;
+	width: 100%;
+	}
+}
+
+@media screen and (max-width: 960px) {
+
+header {
+	width: 100%;
+	position: relative;
+}
+
+header a.logo {
+	left: 38%;
+
+}
+
+nav { 
+	background-color: rgba(0,0,0,.7); 
+	position: relative; 
+	float: left;
+	padding: 120px 0px 0px 175px;
+	width: 100%;
+}
+
+nav > ul {
+	padding-left: 10px;
+}
+
+article {
+	margin: 20px auto;	
+	width:90%;
+	min-height: 250px;
+}
+
+aside {
+	float:left;
+	width:100%;
+	max-width: 910px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.grid_6 h2 {
+	text-align: center;
+	font-size: 24px;
+	}
+}
+	
+@media screen and (max-width: 768px) {
+
+header {
+	width: 100%;
+	position: relative;
+}
+
+header a.logo {
+	left: 33%;
+}
+
+nav { 
+	background-color: rgba(0,0,0,.7); 
+	position: relative; 
+	float: left;
+	padding: 120px 0px 0px 70px;
+	width: 100%;
+}
+
+article {
+	float: none;	
+	width:95%;
+	margin: 25px auto;
+}
+
+aside {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 690px;
+	height: auto;
+}
+
+.aside_12 {
+    width: 100%;
+}
+
+.grid_6 {
+    width: 100%;
+}
+
+.divider1 {
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    height: 2px;
+}
+
+.grid_6 h2 {
+	padding-top: 50px;
+}
+
+.slide2 {
+	background-image: url(../images/benenatomusic-heroimage1-tablet.png);
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	header {
+	width: 100%;
+    position: relative;
+}
+
+header a.logo {
+	position: absolute;
+	display: block;
+	width:150px;
+	height: 60px;
+	background: url(../images/benenato-music-logo-only.png) no-repeat 0 0;
+	background-size: contain;
+	top: 5px;
+	left: 10px;
+}
+
+/* Navigation */
+
+nav {
+	padding: 50px 5px 20px 15px;
+	background-color: #333;
+	height:0px;
+	overflow: hidden;
+}
+	
+nav a.mobile_menu {
+	left: auto;
+	right: 40px;
+	top: 20px;
+	margin-left: 0px;
+	display: block;
+}
+	
+nav ul,
+nav ul ul,
+nav ul ul ul {
+	display: block;
+	position: static;
+}
+	
+nav > ul {
+	padding: 0;
+}
+	
+nav > ul > li {
+	float: none;
+	margin-top: 25px;
+}
+
+nav ul li:hover {
+	background: none;
+}
+
+nav ul li a {
+	width: auto;
+	display: block;
+	margin: 8px 10px;
+	padding: 6px 15px 6px 2px;
+	border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+nav ul li a:hover {
+	background-color: rgba(255,255,255,.2);
+}
+
+nav ul ul {
+	background: none;
+}
+
+nav ul ul li a {
+	margin-left: 30px;
+}
+
+nav ul ul ul li a {
+	margin-left: 60px;
+}
+
+nav a[aria-haspopup="true"]::after {
+	display: none;
+}
+
+aside {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 550px;
+}
+
+aside h1{
+	text-align: center;
+}
+
+[class*="grid_"] {
+    margin-left: 0px;
+}
+
+.container {
+    width: 100%
+}
+
+.grid_12 {
+    width: 100%;
+}
+
+.slide1 {
+	background-image: url(../images/benenatomusic-hero-mobile2.png);
+	height: 300px;
+}
+
+.slide2 {
+	background-image: url(../images/benenatomusic-hero-mobile1.png);
+	height: 300px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+header {
+	width: 100%;
+}
+
+header a.logo {
+	position: absolute;
+	display: block;
+	width:125px;
+	height: 50px;
+	background: url(../images/benenato-music-logo-only.png) no-repeat 0 0;
+	background-size: contain;
+	top: 10px;
+	left: 10px;
+}
+
+/* Nav */
+	
+nav {
+	padding-top: 45px;
+	width: 100%;
+}
+	
+nav a.mobile_menu {
+	left: auto;
+	right: 40px;
+	top: 20px;
+	margin-left: 0px;
+	display: block;
+}
+
+aside {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 450px;
+}
+
+aside h1{
+	text-align: center;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	
+aside {
+	margin-top: 50%;
+	width: 90%;
+}
+
+nav {
+	width: 95%;
+}
+	
+nav a.mobile_menu {
+	left: auto;
+	right: 25px;
+	top: 15px;
+	margin-left: 0px;
+	display: block;
+	}
+}
+	

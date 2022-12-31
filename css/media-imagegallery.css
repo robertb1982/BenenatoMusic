@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Masonry Image Gallery */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	font-family: Arial, Verdana, sans-serif;
+	background-color:#000000;
+	width: 100%;
+}
+
+/* Section */
+
+section {
+	width: 100%;
+	max-width: 1200px;
+	min-height: 400px;
+	height: inherit;
+	margin: 50px auto;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 8px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  padding: 10px;
+  width: 100%;
+  transition: transform .5s ease;
+}
+
+.column a {
+  overflow: hidden;
+  display: block;
+}
+
+.column img:hover {
+    transform: scale(1.06);
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .column {
+    max-width: 90%;
+  }
+}
